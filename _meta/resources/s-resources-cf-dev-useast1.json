@@ -27,7 +27,7 @@
     "IamPolicyLambda": {
       "Type": "AWS::IAM::Policy",
       "Properties": {
-        "PolicyName": "dev-serverless-graphql-blog-lambda",
+        "PolicyName": "dev-trackmymood-online-lambda",
         "PolicyDocument": {
           "Version": "2012-10-17",
           "Statement": [
@@ -45,21 +45,28 @@
               "Action": [
                 "*"
               ],
-              "Resource": "arn:aws:dynamodb:us-east-1:*:table/serverless-graphql-blog-posts-dev"
+              "Resource": "arn:aws:dynamodb:us-east-1:*:table/trackmymood-online-posts-dev"
             },
             {
               "Effect": "Allow",
               "Action": [
                 "*"
               ],
-              "Resource": "arn:aws:dynamodb:us-east-1:*:table/serverless-graphql-blog-authors-dev"
+              "Resource": "arn:aws:dynamodb:us-east-1:*:table/trackmymood-online-authors-dev"
             },
             {
               "Effect": "Allow",
               "Action": [
                 "*"
               ],
-              "Resource": "arn:aws:dynamodb:us-east-1:*:table/serverless-graphql-blog-comments-dev"
+              "Resource": "arn:aws:dynamodb:us-east-1:*:table/trackmymood-online-comments-dev"
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "*"
+              ],
+              "Resource": "arn:aws:dynamodb:us-east-1:*:table/trackmymood-online-events-dev"
             }
           ]
         },
@@ -68,6 +75,37 @@
             "Ref": "IamRoleLambda"
           }
         ]
+      }
+    },
+    "EventsDynamo": {
+      "Type": "AWS::DynamoDB::Table",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "username",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "created",
+            "AttributeType": "N"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "username",
+            "KeyType": "HASH"
+          },
+          {
+            "AttributeName": "created",
+            "KeyType": "RANGE"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 1,
+          "WriteCapacityUnits": 1
+        },
+        "TableName": "trackmymood-online-events-dev"
       }
     },
     "PostsDynamo": {
@@ -90,7 +128,7 @@
           "ReadCapacityUnits": 1,
           "WriteCapacityUnits": 1
         },
-        "TableName": "serverless-graphql-blog-posts-dev"
+        "TableName": "trackmymood-online-posts-dev"
       }
     },
     "AuthorsDynamo": {
@@ -113,7 +151,7 @@
           "ReadCapacityUnits": 1,
           "WriteCapacityUnits": 1
         },
-        "TableName": "serverless-graphql-blog-authors-dev"
+        "TableName": "trackmymood-online-authors-dev"
       }
     },
     "CommentsDynamo": {
@@ -136,7 +174,7 @@
           "ReadCapacityUnits": 1,
           "WriteCapacityUnits": 1
         },
-        "TableName": "serverless-graphql-blog-comments-dev"
+        "TableName": "trackmymood-online-comments-dev"
       }
     }
   },

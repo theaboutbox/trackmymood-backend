@@ -14,11 +14,11 @@
     "babelify": "^7.2.0",
     "serverless-optimizer-plugin": "^1.0.0"
   },
-  "description": "A Serverless GraphQL blog.",
+  "description": "Simple application to manipulate time-series data",
   "devDependencies": {},
   "homepage": "https://github.com/serverless/serverless-graphql-blog#readme",
   "license": "MIT",
-  "name": "serverless-graphql-blog",
+  "name": "trackmymood-online",
   "optionalDependencies": {},
   "private": false,
   "repository": {
