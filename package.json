@@ -1,0 +1,30 @@
+{
+  "_npmOperationalInternal": {
+    "host": "packages-8-eu.internal.npmjs.com",
+    "tmp": "tmp/serverless-graphql-blog-0.0.1.tgz_1454364465236_0.9756594286300242"
+  },
+  "author": {
+    "name": "me"
+  },
+  "bugs": {
+    "url": "https://github.com/serverless/serverless-graphql-blog/issues"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.2.0",
+    "serverless-optimizer-plugin": "^1.0.0"
+  },
+  "description": "A Serverless GraphQL blog.",
+  "devDependencies": {},
+  "homepage": "https://github.com/serverless/serverless-graphql-blog#readme",
+  "license": "MIT",
+  "name": "serverless-graphql-blog",
+  "optionalDependencies": {},
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serverless/serverless-graphql-blog.git"
+  },
+  "scripts": {},
+  "version": "0.0.1"
+}

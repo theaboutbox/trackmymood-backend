@@ -1,0 +1,6 @@
+{
+  "project": "serverless-graphql-blog",
+  "projectBucket": "serverless.us-east-1.backend.trackmymood.online",
+  "domain": "backend.trackmymood.online",
+  "notificationEmail": "cpope@gtri.com"
+}

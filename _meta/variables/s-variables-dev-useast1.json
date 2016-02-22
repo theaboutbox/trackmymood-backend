@@ -1,0 +1,5 @@
+{
+  "region": "us-east-1",
+  "resourcesStackName": "serverless-graphql-blog-dev-r",
+  "iamRoleArnLambda": "arn:aws:iam::083936934880:role/serverless-graphql-blog-dev-r-IamRoleLambda-FTOJYDWH5GSG"
+}
